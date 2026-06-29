@@ -1,0 +1,139 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --muted: 240 4% 16%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 263 70% 60%;
+    --border: 240 6% 20%;
+    --radius: 0.75rem;
+  }
+
+  * {
+    border-color: hsl(var(--border));
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: hsl(263 70% 60% / 0.3);
+    color: hsl(0 0% 100%);
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: hsl(240 10% 3.9%);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: hsl(240 6% 25%);
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(263 70% 50%);
+  }
+}
+
+@layer utilities {
+  /* Glassmorphism surface */
+  .glass {
+    background: linear-gradient(
+      135deg,
+      hsl(0 0% 100% / 0.06) 0%,
+      hsl(0 0% 100% / 0.02) 100%
+    );
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid hsl(0 0% 100% / 0.08);
+  }
+
+  .glass-strong {
+    background: hsl(240 10% 8% / 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid hsl(0 0% 100% / 0.1);
+  }
+
+  /* Gradient text */
+  .text-gradient {
+    background: linear-gradient(
+      to right,
+      hsl(0 0% 100%),
+      hsl(240 5% 70%)
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .text-gradient-accent {
+    background: linear-gradient(
+      120deg,
+      hsl(263 80% 70%),
+      hsl(217 91% 65%),
+      hsl(280 80% 70%)
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: gradient-shift 6s ease infinite;
+  }
+
+  /* Subtle grid background */
+  .bg-grid {
+    background-image: linear-gradient(
+        to right,
+        hsl(0 0% 100% / 0.04) 1px,
+        transparent 1px
+      ),
+      linear-gradient(to bottom, hsl(0 0% 100% / 0.04) 1px, transparent 1px);
+    background-size: 56px 56px;
+  }
+
+  .bg-dot {
+    background-image: radial-gradient(
+      hsl(0 0% 100% / 0.08) 1px,
+      transparent 1px
+    );
+    background-size: 22px 22px;
+  }
+
+  .mask-fade-edges {
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 12%,
+      black 88%,
+      transparent
+    );
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 12%,
+      black 88%,
+      transparent
+    );
+  }
+
+  .mask-radial {
+    -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+    mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+  }
+}
