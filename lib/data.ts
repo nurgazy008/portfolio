@@ -7,6 +7,9 @@ import {
   type LucideIcon,
 } from "lucide-react";
 
+// On GitHub Pages the site lives under /<repo>, so static assets need the prefix.
+const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
 export const SITE = {
   name: "Zhangozy Nurgazy",
   title: "Mobile Developer • AI Vibe Coder",
@@ -16,7 +19,7 @@ export const SITE = {
   github: "https://github.com/", // update with your handle
   linkedin: "https://linkedin.com/in/", // update with your handle
   telegram: "https://t.me/", // update with your handle
-  resume: "/resume.pdf",
+  resume: `${BASE_PATH}/resume.pdf`,
 };
 
 export type TechCategory =
