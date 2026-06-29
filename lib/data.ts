@@ -81,8 +81,8 @@ export const PROJECTS: Project[] = [
     description:
       "A medication-adherence monitoring system: a Flutter patient app (QR pairing, dose tracking, K-score) plus a doctor web portal for real-time patient monitoring, prescriptions and alerts. Diploma project.",
     tech: ["Flutter", "Firebase", "BLoC", "Riverpod"],
-    github: "https://github.com/",
-    demo: "#",
+    github: "https://github.com/nurgazy008",
+    demo: "https://dary-tan-diplomka-web-portal-production.up.railway.app/",
     accent: "from-violet-500/30 to-fuchsia-500/10",
     emoji: "💊",
   },
