@@ -28,6 +28,11 @@ jobs:
           node-version: 20
           cache: npm
 
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true # auto-enable Pages with "GitHub Actions" as source
+
       - name: Compute base path
         id: base
         run: |
